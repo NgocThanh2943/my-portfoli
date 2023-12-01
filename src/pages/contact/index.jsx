@@ -7,6 +7,7 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
+    // name の入力値を取得しよう！
     const name = form.get("name") || "";
     const email = form.get("email") || "";
     const message = form.get("message") || "";
@@ -17,6 +18,7 @@ const Contact = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        // name の入力値をリクエストに含めよう！
         name: name,
         email: email,
         message: message,
